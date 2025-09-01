@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body {
+  background-color: #010b0e;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url("../src/assets/Oswald/Oswald-VariableFont_wght.ttf");
+}
+
+@theme {
+  --color-lightcyan-100: oklch(0.795 0.1113 203.22);
+  --color-magenta-100: oklch(0.6573 0.2696 343.86);
+  --color-darkpink-100: oklch(0.5952 0.23858 7.0307);
+  --color-bloodorange-100: oklch(0.6329 0.2318 26.44);
+  --color-tangerine-100: oklch(0.6799 0.196 33.7);
+  --color-otherblue-100: oklch(0.4797 0.136 273.17);
+  --color-richblack-100: oklch(0.2108 0.0203 212.74);
+  --font-oswald: Oswald, "sans-serif";
+}
