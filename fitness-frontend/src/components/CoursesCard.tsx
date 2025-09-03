@@ -12,17 +12,17 @@ const CoursesCard: React.FC<CoursesCardInfo> = ({
   trainer_id,
 }) => {
   return (
-    <div className="text-white bg-richblack-100 w-70 h-76 mb-10">
+    <div className="text-white bg-richblack-100 w-70 h-80 mb-10 drop-shadow-xl drop-shadow-darkpink-100 border-darkpink-100">
       <img
         src="courses-image.jpg"
         alt="Course"
         className="ml-5 pt-5 w-60 h-48"
       />
-      <div>
-        <h1 className="mt-3">{name}</h1>
-        <h3 className="mt-2">{date}</h3>
-        <h3 className="mt-2">{duration}</h3>
-        <h3 className="mt-2">{trainer_id}</h3>
+      <div className="text-center">
+        <h1 className="mt-3 font-bold">{name}</h1>
+        <h3 className="mt-1">{date}</h3>
+        <h3 className="mt-1">{duration}</h3>
+        <h3 className="mt-1">{trainer_id}</h3>
       </div>
     </div>
   );

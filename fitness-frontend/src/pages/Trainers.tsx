@@ -1,5 +1,6 @@
+import TrainersComp from "@/components/TrainersComp";
 import Header from "../components/Header";
-import MembersCard from "../components/MembersCard";
+import NewTrainerButton from "@/components/NewTrainerButton";
 
 const Trainers = () => {
   return (
@@ -8,7 +9,7 @@ const Trainers = () => {
       <h1 className="text-white text-7xl text-center mt-15 font-oswald font-bold">
         Trainers
       </h1>
-      <div className="flex justify-end mr-25 items-center">
+      {/* <div className="flex justify-end mr-25 items-center">
         <input
           type="text"
           placeholder="Search Trainers"
@@ -17,14 +18,11 @@ const Trainers = () => {
         <button className="bg-lightcyan-100 drop-shadow-sm drop-shadow-lightcyan-100 w-20 h-5 mt-10 ml-5 rounded-sm text-center text-white">
           Submit
         </button>
-      </div>
+      </div> */}
       <div className="ml-25 mr-25 mt-15 mb-20">
         <div className="flex flex-wrap justify-between">
-          <MembersCard />
-          <MembersCard />
-          <MembersCard />
-          <MembersCard />
-          <MembersCard />
+          <TrainersComp />
+          <NewTrainerButton />
         </div>
       </div>
     </div>

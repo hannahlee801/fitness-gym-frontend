@@ -1,18 +1,18 @@
-import MembersCard from "./MembersCard";
+import TrainersCard from "./TrainersCard";
 import { useEffect, useState } from "react";
 
-type MembersResponse = {
+type TrainersResponse = {
   id: number;
   name: string;
-  activeStatus: boolean;
+  specialty: string;
 };
 
-function MembersComp() {
-  const [members, setMembers] = useState<MembersResponse[]>([]);
+function TrainersComp() {
+  const [members, setMembers] = useState<TrainersResponse[]>([]);
 
   useEffect(() => {
     const url: string =
-      "https://fitness-and-gym-production.up.railway.app/members";
+      "https://fitness-and-gym-production.up.railway.app/trainers";
     const fetchMembers = async () => {
       try {
         const response = await fetch(url);
@@ -20,7 +20,7 @@ function MembersComp() {
           throw new Error(`Response status: ${response.status}`);
         }
 
-        const data: MembersResponse[] = await response.json();
+        const data: TrainersResponse[] = await response.json();
         setMembers(data);
       } catch (error: any) {
         console.error(error.message);
@@ -30,12 +30,12 @@ function MembersComp() {
   }, []);
 
   return (
-    <div className="flex flex-wrap space-x-9">
+    <div className="flex flex-wrap space-x-8">
       {members.map((member, i) => (
-        <MembersCard key={i} {...member} />
+        <TrainersCard key={i} {...member} />
       ))}
     </div>
   );
 }
 
-export default MembersComp;
+export default TrainersComp;

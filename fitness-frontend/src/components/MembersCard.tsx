@@ -1,10 +1,10 @@
-type CardInfo = {
+type MemberCardInfo = {
   name: string;
   activeStatus: boolean;
   id: number;
 };
 
-const MembersCard: React.FC<CardInfo> = ({ name, activeStatus, id }) => {
+const MembersCard: React.FC<MemberCardInfo> = ({ name, activeStatus, id }) => {
   return (
     <div className="text-white text-center bg-richblack-100 w-68 h-80 drop-shadow-xl drop-shadow-bloodorange-100 border-bloodorange-100 mb-10">
       <img

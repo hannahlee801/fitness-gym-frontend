@@ -1,4 +1,4 @@
-import { Button } from "../components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogClose,
@@ -8,17 +8,17 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../components/ui/dialog";
-import { Input } from "../components/ui/input";
-import { Label } from "../components/ui/label";
+} from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { useState } from "react";
 
-type FormData = {
+type CreateNewMemberFormData = {
   name: string;
 };
 
-const CreatingMembers: React.FC = () => {
-  const [formData, setFormData] = useState<FormData>({
+const NewMemberButton: React.FC = () => {
+  const [formData, setFormData] = useState<CreateNewMemberFormData>({
     name: "",
   });
 
@@ -52,7 +52,7 @@ const CreatingMembers: React.FC = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <button className="fixed z-10 right-[5%] bottom-[5%] border-1 rounded hover:cursor-pointer p-2 active:bg-rose-600 hover:bg-rose-400">
+        <button className="fixed z-10 right-[5%] bottom-[5%] border-1 bg-white rounded hover:cursor-pointer p-2 active:bg-richblack-100 active:text-white hover:bg-richblack-100 hover:text-white border-bloodorange-100 drop-shadow-lg drop-shadow-bloodorange-100">
           +
         </button>
       </DialogTrigger>
@@ -64,9 +64,9 @@ const CreatingMembers: React.FC = () => {
           </DialogHeader>
           <div className="grid gap-4">
             <div className="grid gap-3">
-              <Label htmlFor="user">Username</Label>
+              <Label htmlFor="user">Name</Label>
               <Input
-                id="user"
+                id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
@@ -77,7 +77,7 @@ const CreatingMembers: React.FC = () => {
             <DialogClose asChild>
               <Button variant="outline">Cancel</Button>
             </DialogClose>
-            <Button type="submit">Post</Button>
+            <Button type="submit">Submit</Button>
           </DialogFooter>
         </form>
       </DialogContent>
@@ -85,4 +85,4 @@ const CreatingMembers: React.FC = () => {
   );
 };
 
-export default CreatingMembers;
+export default NewMemberButton;
